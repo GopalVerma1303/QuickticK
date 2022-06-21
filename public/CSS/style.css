@@ -1,0 +1,236 @@
+p {
+    font-weight: 1000;
+    font-family: 'Source Code Pro', monospace;
+}
+
+.list-titles {
+    font-family: 'Source Code Pro', monospace;
+}
+
+.heading {
+    font-size: 500%;
+    font-weight: 1000;
+    font-family: 'Source Code Pro', monospace;
+    margin-bottom: 5%;
+    margin-top: 0%;
+}
+
+.main-title {
+    font-size: 300%;
+}
+
+.row {
+    text-align: center;
+}
+
+.card {
+    /* margin: 5%; */
+    font-weight: 1000;
+    font-family: 'Source Code Pro', monospace;
+    transition-delay: all 5s linear;
+}
+
+.grow {
+    transition: all .2s ease-in-out;
+}
+
+.grow:hover {
+    transform: scale(1.03);
+}
+
+.sec-2-card {
+    transition: all .2s ease-in-out;
+}
+
+.sec-2-card:hover {
+    transform: scale(1.03);
+    background-color: rgb(218, 218, 218);
+}
+
+
+footer {
+    color: white;
+    color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    margin-bottom: 7%;
+    margin-top: 5%;
+}
+
+.if {
+    padding: 1%;
+    color: rgb(153, 153, 153);
+}
+
+.btn {
+
+    font-weight: 1000 !important;
+    font-family: 'Source Code Pro', monospace !important;
+    color: white !important;
+    margin-top: 7%;
+    background-color: #404e67 !important;
+    transition: all .2s ease-in-out !important;
+}
+
+.btn:hover {
+    transform: scale(1.03) !important;
+    background-color: #2f394b !important;
+}
+
+#stats-subtitle {
+    margin-bottom: 5%;
+}
+
+.inputField {
+    width: 10%;
+}
+
+table.fixed {
+    table-layout: fixed;
+    overflow: hidden;
+    word-wrap: break-word;
+}
+
+.table-wrapper {
+    width: 100% !important;
+    text-align: center;
+}
+
+form {
+    display: inline;
+}
+
+.navbar {
+    font-family: 'Source Code Pro', monospace !important;
+    background-color: #404e67 !important;
+}
+
+.ni {
+    color: white !important;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+    font-family: 'Source Code Pro', monospace;
+    background-color: #2f394b;
+    overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+    background-color: #2f394b;
+    color: white;
+}
+
+/* Right-aligned section inside the top navigation */
+.topnav-right {
+    float: right;
+}
+
+
+@media(max-width: 1249px) {
+    .main-title {
+        font-size: 254%;
+    }
+}
+
+@media(max-width: 1000px) {
+    .main-title {
+        font-size: 134%;
+    }
+}
+
+@media(max-width: 768px) {
+    .main-title {
+        font-size: 134%;
+    }
+}
+
+@media(max-width: 716px) {
+    .main-title {
+        font-size: 113%;
+    }
+}
+
+@media(max-width: 576px) {
+    .main-title {
+        font-size: 63%;
+    }
+    .hicon{
+        visibility: hidden;
+    }
+    .tagline{
+        font-size: 20% !important;
+    }
+    .signin-card {
+        width: 80% !important;
+    }
+}
+@media(max-width: 428px) {
+    .topnav-right {
+        float: left;
+    }
+    table{
+        font-size: 70%;
+    }
+    .btn{
+        font-size: 70% !important;
+    }
+    input{
+        font-size: 70% !important;
+    }
+    #time{
+        font-size: 80%;
+    }
+    #date{
+        font-size: 80%;
+    }
+    .dhsign {
+        font-size: 80%;
+    }
+    .p-signin {
+        font-size: 20% !important;
+    }
+    .signin-card {
+        width: 80% !important;
+    }
+    h3{
+        font-size: 150% !important;
+    }
+    footer{
+        font-size: 70%;
+    }
+}
+
+@media(max-width: 262px) {
+    .main-title {
+        font-size: 55%;
+    }
+    .sign-in-headings {
+        font-size: 1%;
+    }
+    .hicon{
+        visibility: hidden;
+    }
+}
+
+
+
+.topnav a {
+    font-size: 14px;
+}

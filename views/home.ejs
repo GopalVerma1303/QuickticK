@@ -1,0 +1,95 @@
+<%- include('./partials/header'); -%>
+
+    <body>
+        <div class="grey-bg container-fluid">
+            <section id="intro-of-the-page">
+                <div class="row heading">
+                    <div class="col-12 mt-3 mb-1">
+                        <h1 class="main-title">QuícktícK</h1>
+                        <p class="tagline" style="font-size: 30%;">"Ab kuch nahi bhuloge."</p>
+                    </div>
+                </div>
+            </section>
+            <section id="stats-subtitle">
+                <div class="row">
+                    <div class="col-xl-6 col-md-12">
+                        <div class="card overflow-hidden sec-2-card">
+                            <div class="card-content">
+                                <div class="card-body cleartfix">
+                                    <div class="media align-items-stretch">
+                                        <div class="align-self-center">
+                                            <i class="fa-solid fa-clock font-large-2 mr-2 hicon"></i>
+                                        </div>
+                                        <div class="media-body">
+                                            <h4>Time</h4>
+                                            <span id="time">
+                                            </span>
+                                        </div>
+                                        <div class="align-self-center">
+                                            <i class="fa-solid fa-clock font-large-2 mr-2 hicon"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-6 col-md-12">
+                        <div class="card sec-2-card">
+                            <div class="card-content">
+                                <div class="card-body cleartfix">
+                                    <div class="media align-items-stretch">
+                                        <div class="align-self-center">
+                                            <i class="fa-solid fa-calendar font-large-2 mr-2 hicon"></i>
+                                        </div>
+                                        <div class="media-body">
+                                            <h4>Day & Date</h4>
+                                            <span id="date">
+                                            </span>
+                                        </div>
+                                        <div class="align-self-center">
+                                            <i class="fa-solid fa-calendar font-large-2 mr-2 hicon"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </section>
+    </body>
+    <script>
+        var datetime = new Date();
+        console.log(datetime);
+        document.getElementById("time").textContent = datetime;
+        function refreshTime() {
+            const timeDisplay = document.getElementById("time");
+            const dateString1 = new Date().toLocaleTimeString();
+            const formattedString1 = dateString1.replace(", ", " - ");
+            timeDisplay.textContent = formattedString1;
+        }
+        setInterval(refreshTime, 1000);
+
+        var span = document.getElementById('date');
+
+        function time() {
+            let today = new Date();
+            let options = {
+                weekday: "long",
+                day: "numeric",
+                month: "long",
+                year: "numeric"
+            };
+            let day = today.toLocaleDateString("en-US", options);
+            span.textContent = day;
+        }
+
+        setInterval(time, 1000);
+
+        var scroll = new SmoothScroll('a[href*="#"]');
+    </script>
+
+
+
+    <%- include('./partials/footer'); -%>
+
+        </html>

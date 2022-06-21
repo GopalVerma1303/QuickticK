@@ -1,0 +1,120 @@
+<%- include('./partials/header'); -%>
+
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+        <style>
+            body {
+                background-color: #f5f7fa;
+            }
+
+            .app-container {
+                height: auto;
+                width: 100%;
+                overflow-y: scroll;
+            }
+
+            .complete {
+                text-decoration: line-through;
+            }
+
+            .btn {
+                margin: auto auto;
+            }
+
+            .table-wrapper {
+                width: 48%;
+                text-align: center;
+            }
+
+            input[type="text"] {
+                font-family: 'Source Code Pro', monospace;
+                text-align: center;
+            }
+
+            .listTitle {
+                font-size: 200%;
+                margin-top: 3%;
+                margin-bottom: 2%;
+                color: #404e67;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="d-flex align-items-center flex-column">
+            <div class="listTitle">
+                <h3 class="listTitle" style="font-family:'Source Code Pro', monospace;">
+                    Todo
+                </h3>
+            </div>
+            <div class="col-sm-12 col-md-10 col-lg-6 list-container">
+
+                <form class="card card-lg" action="/saveItem" method="POST">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col">
+                            <input type="text" autocomplete="off" name="newItem" id="formGroupExampleInput"
+                                class="form-control form-control-lg form-control-borderless newListItem"
+                                placeholder="Enter task here.">
+                        </div>
+                        <div class="col-auto">
+                            <button class="btn btn-lg" type="submit" name="list" value="<%= userName %>">Add</button>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="table-wrapper">
+                    <table class="fixed table table-hover table-bordered"
+                        style="font-family: 'Source Code Pro', monospace;">
+                        <thead>
+                            <tr>
+                                <th style="width: 20%;">NO.</th>
+                                <th style="width: 62%;">TASK</th>
+                                <th style="width: 25%;">DONE</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% var count=1 %>
+                                <% newListItems.forEach((item)=> { %>
+                                    <form action="/delete" method="POST">
+                                        <tr class=" <%= item.status ? 'table-success' : 'table-light' %> ">
+                                            <td>
+                                                <%= count %>.
+                                            </td>
+                                            <td>
+                                                <%= item.name %>
+                                            </td>
+                                            <td>
+                                                <button
+                                                    class="<%= item._id %> btn btn-success btn-sm btn-block itemDone "
+                                                    name="deleteBtn" id="delete-btn" value="<%= item._id %>">
+                                                    Done
+                                                </button>
+                                                <input type="hidden" name="listName" value="<%= userName %>">
+                                            </td>
+                                            </td>
+                                        </tr>
+                                    </form>
+                                    <% count+=1 %>
+                                        <% }) %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        const deleteButton = document.querySelectorAll(".itemDone");
+        // console.log(deleteButton);
+        deleteButton.forEach((button, i) => {
+            button.addEventListener("click", () => {
+                const endPoint = `/${button.classList[0]}`;
+                fetch(endPoint, {
+                    method: "DELETE"
+                })
+            });
+        });
+    </script>
+    <%- include('./partials/footer'); -%>
+
+        </html>
